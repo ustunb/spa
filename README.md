@@ -1,0 +1,2 @@
+# spa
+Selective Preference Aggregation
