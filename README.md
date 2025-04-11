@@ -47,3 +47,30 @@ Selective Preference Aggregation
         judgeB,itemX,itemZ,1
         judgeC,itemY,itemZ,1
         ```
+
+### 2. Configure and Run Experiments
+
+1.  **Update Dataset Creation Script:**
+    * Open the file `scripts/create_datasets.py`.
+    * Find the `settings` dictionary.
+    * Add the `{dataset_name}` string (e.g., `"movie"`) from Step 1 to the `data_names` list.
+        ```python
+        settings = {
+            "data_names": ["movie"], 
+            ...
+        }
+        ```
+    * Execute the script
+
+2. **Update Main Experiment Script:**
+    * Open the file `scripts/dev_spa.py`.
+    * Find the `settings` dictionary within this script.
+    * Add the same `{dataset_name}` string to the `data_names` list (or similar configuration entry) in this file as well.
+        ```python
+        settings = {
+            "data_names": ["movie"], # Added "movie"
+            "seed": 2338,
+            ...
+        }
+        ```
+    * Execute dev_spa.py
