@@ -1,0 +1,176 @@
+item_name,AI-ML-data-mining,AI-NLP,AI-Vision,AI-Web-Retrieval,AI-just-artificial-intelligence
+ASU,58,25,34,28,4
+Auburn,82,96,117,120,139
+Augusta,115,121,128,121,139
+Binghamton,84,81,68,65,49
+Boise,137,83,128,72,149
+BC,90,77,85,121,132
+BU,16,65,14,23,90
+Brandeis,87,53,80,77,78
+BYU,105,69,100,77,76
+Brown University,43,31,31,35,43
+CUNY,107,66,91,99,87
+California Institute of Technology,55,121,42,86,121
+CMU,1,2,1,5,1
+Case Western Reserve University,98,75,128,77,89
+Clemson University,137,121,78,121,114
+Cleveland State University,146,121,95,121,130
+College of William and Mary,101,120,103,91,125
+Colorado School of Mines,107,121,87,86,72
+Colorado State University,137,121,76,121,130
+Columbia University,12,15,13,24,25
+Cornell,6,3,9,2,8
+Dartmouth College,88,69,117,86,117
+DePaul University,125,96,128,121,112
+Drexel University,96,87,87,121,83
+Duke University,17,38,35,52,30
+Emory University,75,50,113,11,70
+Florida Atlantic University,147,121,128,121,148
+Florida International University,135,81,87,121,123
+Florida State University,95,103,117,120,98
+George Mason University,61,49,48,42,33
+George Washington University,147,46,76,95,123
+Georgetown University,117,47,128,56,114
+Georgia Institute of Technology,23,20,15,12,32
+Georgia State University,100,113,112,121,160
+Harvard University,26,67,57,45,2
+IUPUI,85,121,127,121,139
+Illinois Institute of Technology,107,88,73,57,95
+Indiana University,51,88,64,95,84
+Iowa State University,68,83,105,65,63
+Johns Hopkins University,33,4,7,121,49
+Kansas State University,131,113,128,99,125
+Kent State University,101,121,128,120,132
+Lehigh University,93,95,100,55,67
+Louisiana State University,147,121,128,111,149
+Massachusetts Institute of Technology,4,18,6,50,15
+Michigan State University,50,68,16,34,34
+Michigan Technological University,147,103,128,121,118
+Mississippi State University,147,120,128,121,112
+Missouri S&T,117,121,128,121,139
+Missouri University of Technology,147,121,128,121,149
+Montana State University,143,121,128,121,160
+NJIT,85,121,105,61,80
+New Mexico State University,147,121,128,121,86
+New York University,13,10,45,21,56
+North Carolina State University,113,76,128,48,45
+Northeastern University,29,38,27,13,9
+Northern Arizona University,143,121,128,99,160
+Northwestern University,25,61,79,41,54
+Nova Southeastern University,137,121,113,121,160
+OHSU,147,77,113,121,160
+Ohio State University,35,37,64,25,62
+Ohio University,147,121,128,121,139
+Oklahoma State University,147,121,100,121,160
+Old Dominion University,147,113,105,91,104
+Oregon State University,48,23,21,121,36
+Pennsylvania State University,41,25,32,10,19
+Portland State University,147,103,46,121,159
+Princeton University,10,36,28,42,74
+Purdue University,21,47,68,7,22
+Rensselaer Polytechnic Institute,61,103,128,83,28
+Rice University,31,72,44,30,20
+Rochester Institute of Technology,76,58,54,64,59
+Rutgers University,18,35,23,3,7
+Simmons University,147,121,128,121,127
+Stanford,3,7,4,20,24
+Stevens Institute of Technology,68,88,30,99,78
+Stony Brook University,63,29,8,15,51
+Syracuse University,79,121,91,71,73
+TTI Chicago,36,24,37,121,93
+Temple University,65,51,57,61,44
+Texas A&M University,39,45,54,16,54
+Texas State University,125,121,122,121,159
+Texas Tech University,147,121,128,121,102
+The University of Alabama,147,91,128,91,160
+Towson University,135,121,128,121,139
+Tufts University,74,91,128,99,67
+Tulane University,98,96,61,111,27
+UCCS,137,103,68,99,122
+UNC - Charlotte,120,91,80,99,119
+UNC - Greensboro,131,121,128,121,132
+Univ. of California - Berkeley,2,27,2,95,30
+Univ. of California - Davis,57,74,53,48,61
+Univ. of California - Irvine,28,42,39,47,41
+Univ. of California - Los Angeles,7,14,37,19,3
+Univ. of California - Merced,65,103,12,121,109
+Univ. of California - Riverside,48,71,36,45,90
+Univ. of California - San Diego,8,10,3,22,35
+Univ. of California - Santa Barbara,34,17,40,13,46
+Univ. of California - Santa Cruz,40,44,50,18,42
+Univ. of Illinois at Urbana-Champaign,5,12,5,1,13
+Univ. of Maryland - Baltimore County,101,72,105,111,76
+University at Albany - SUNY,125,121,128,86,138
+University at Buffalo,30,64,20,42,23
+University of Alabama - Birmingham,124,120,122,99,149
+University of Arizona,56,33,85,121,139
+University of Arkansas,90,103,128,77,71
+University of Central Florida,59,59,10,67,46
+University of Chicago,44,59,56,25,114
+University of Cincinnati,137,121,105,121,160
+University of Colorado - Denver,147,121,128,99,160
+University of Colorado Boulder,54,28,98,50,56
+University of Connecticut,83,85,117,37,104
+University of Delaware,77,121,62,39,102
+University of Florida,71,91,51,91,94
+University of Georgia,78,113,91,67,56
+University of Hawaii at Manoa,120,121,128,121,160
+University of Houston,125,57,64,57,104
+University of Illinois at Chicago,32,21,46,8,18
+University of Iowa,47,80,80,83,95
+University of Kansas,94,103,122,121,129
+University of Kentucky,112,85,95,95,67
+University of Louisiana - Lafayette,92,121,128,77,88
+University of Maryland - College Park,20,6,11,39,12
+University of Massachusetts Amherst,15,16,22,9,6
+University of Massachusetts Boston,107,121,105,121,139
+University of Massachusetts Lowell,105,31,128,99,85
+University of Memphis,96,103,122,111,109
+University of Miami,147,121,128,121,149
+University of Michigan,24,8,29,4,21
+University of Michigan-Dearborn,131,100,128,121,155
+University of Minnesota,45,62,49,37,48
+University of Missouri,147,121,74,121,155
+University of Missouri - Kansas City,147,121,128,121,132
+University of Nebraska,113,113,128,121,65
+University of Nebraska - Omaha,143,121,128,121,109
+University of Nevada,115,121,113,121,119
+University of New Hampshire,81,113,128,52,66
+University of New Mexico,147,121,128,111,160
+University of New Orleans,147,121,128,121,155
+University of North Carolina,46,9,41,72,40
+University of North Texas,101,77,122,121,104
+University of Notre Dame,60,38,87,31,39
+University of Oklahoma,147,113,128,121,155
+University of Oregon,79,41,71,77,60
+University of Pennsylvania,14,5,19,61,29
+University of Pittsburgh,37,33,32,32,5
+University of Rochester,64,43,23,67,26
+University of South Carolina,120,96,60,83,90
+University of South Florida,147,120,91,99,160
+USC,22,22,25,33,14
+University of Southern Mississippi,147,121,128,121,104
+University of Tennessee,131,121,72,72,132
+University of Texas - El Paso,147,121,117,121,100
+UT Arlington,73,120,63,57,82
+UT Austin,19,13,26,72,16
+UT Dallas,42,19,59,52,11
+University of Texas at San Antonio,146,120,128,111,132
+University of Tulsa,147,100,128,99,160
+University of Utah,53,30,80,35,80
+University of Vermont,147,121,128,111,149
+University of Virginia,38,54,80,6,17
+University of Washington,9,1,18,27,38
+University of Wisconsin - Madison,11,55,16,57,36
+Utah State University,125,121,128,121,160
+Vanderbilt University,107,100,74,111,97
+Virginia Commonwealth University,125,103,128,121,127
+Virginia Tech,70,55,103,28,51
+Washington State University,72,120,95,111,53
+Washington University in St. Louis,52,121,51,72,10
+Wayne State University,117,121,67,67,98
+West Virginia University,120,121,43,121,101
+Western Michigan University,147,120,128,121,160
+Wichita State University,88,121,128,121,139
+Worcester Polytechnic Institute,67,63,99,16,74
+Yale University,27,51,111,86,64
