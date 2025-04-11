@@ -74,3 +74,23 @@ Selective Preference Aggregation
         }
         ```
     * Execute dev_spa.py
+
+### 3. Generating and Viewing Results
+
+1.  **Aggregate Base Results:**
+    * Configure settings within  `scripts/aggregate_base_results.py`.
+    * Execute the script .
+
+2.  **Combine All Results:**
+    * Configure settings within `scripts/combine_all_results.py`.
+    * Execute the script.
+
+3.  **Locate Output CSV:**
+    * The final, combined results are saved as a CSV file within the `results/` directory (`results_dir`).
+    * The filename includes a timestamp for uniqueness.
+
+4.  **(Optional) Generate LaTeX Table:**
+    * Modify and run the R script located at `scripts/create_big_table.R`. Update the script to point to the correct input CSV file from the previous step.
+    * This will output a `.tex` file.
+
+---
