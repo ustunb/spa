@@ -5,7 +5,7 @@ from pathlib import Path
 np.random.seed(4338)
 
 try:
-    from sra.paths import data_dir
+    from spa.paths import data_dir
 except ImportError:
     print("Warning: Could not import data_dir from sra.paths. Using './data'.")
     data_dir = Path('./data')

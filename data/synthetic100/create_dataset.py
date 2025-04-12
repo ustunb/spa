@@ -1,7 +1,7 @@
 import itertools
 import random
 import pandas as pd
-from sra.paths import data_dir
+from spa.paths import data_dir
 
 judge_num = 10
 item_num = 100

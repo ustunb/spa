@@ -7,7 +7,7 @@ from psutil import Process
 import shutil
 
 # Define directories
-from sra.paths import reports_dir, templates_dir, repo_dir, get_results_file, overleaf_dir, reporting_dir
+from spa.paths import reports_dir, templates_dir, repo_dir, get_results_file, overleaf_dir, reporting_dir
 
 # Script settings / default command line arguments
 settings = {

@@ -3,7 +3,7 @@ This file demonstrates how to use the reporting tools
 The file will compile the DemoReport.Rmd template
 """
 from reporting.utils import open_file, make_report
-from sra.paths import repo_dir, results_dir, reports_dir, templates_dir
+from spa.paths import repo_dir, results_dir, reports_dir, templates_dir
 import dill
 import pandas as pd
 
