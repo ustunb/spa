@@ -29,10 +29,9 @@ def to_ranking_df(ordered_components):
     })
     return df
 
-from spa.debug import ipsh
 class SelectiveRankAggregator:
 
-    def __init__(self, data, prefs=None, items=None, adjust_weights = False, equalize_weights = False, ignore_ties = True, ignore_missing = False, exceed_max_dissent = False, ties_as_half = False):
+    def __init__(self, data, prefs=None, items=None, exceed_max_dissent = False):
         """
         :param data: A dataset containing preference information.
         """
@@ -41,87 +40,19 @@ class SelectiveRankAggregator:
         self.id_to_name = data.id_to_name
         self.prefs = data.prefs if prefs is None else prefs
         self.items = data.items if items is None else items
-        self.adjust_weights = adjust_weights
-        self.ignore_missing = ignore_missing
         self.exceed_max_dissent = exceed_max_dissent
-        self.ignore_ties = ignore_ties
 
         # create graph
         self.edge_weights = self.calculate_edge_weights()
         G = nx.DiGraph()
 
-        if self.adjust_weights:
-            print("Adjusting weights")
-            for _, edge in self.edge_weights.iterrows():
-                G.add_edge(edge['source_id'], edge['dest_id'], weight = edge['v_ij'])
-                G.add_edge(edge['dest_id'], edge['source_id'], weight = edge['v_ji'])
 
-        elif equalize_weights and ties_as_half:
-            print("Equalizing weights and ties as half")
-            for _, edge in self.edge_weights.iterrows():
-                sum_weights = edge['prefer_1'] + edge['prefer_2'] + edge['prefer_none']
-                w_ij = edge['prefer_1'] + 0.5 * edge['prefer_none'] / sum_weights * 100
-                w_ji = edge['prefer_2'] + 0.5 * edge['prefer_none'] / sum_weights * 100
-                #set edge weights
-                edge['w_ij'] = w_ij
-                edge['w_ji'] = w_ji
-                G.add_edge(edge['source_id'], edge['dest_id'], weight = w_ij)
-                G.add_edge(edge['dest_id'], edge['source_id'], weight = w_ji)
-
-        elif equalize_weights and ignore_ties is False:
-            print("Equalizing weights with ties")
-            for _, edge in self.edge_weights.iterrows():
-                sum_weights = edge['prefer_1'] + edge['prefer_2'] + 2 * edge['prefer_none']
-                w_ij = edge['prefer_1'] + edge['prefer_none'] / sum_weights * 100
-                w_ji = edge['prefer_2'] + edge['prefer_none'] / sum_weights * 100
-                #set edge weights
-                edge['w_ij'] = w_ij
-                edge['w_ji'] = w_ji
-                G.add_edge(edge['source_id'], edge['dest_id'], weight = w_ij)
-                G.add_edge(edge['dest_id'], edge['source_id'], weight = w_ji)
-
-        elif equalize_weights:
-            print("Equalizing weights WITHOUT ties")
-            for _, edge in self.edge_weights.iterrows():
-                sum_weights = edge['prefer_1'] + edge['prefer_2']
-                w_ij = edge['prefer_1'] / sum_weights * 100
-                w_ji = edge['prefer_2'] / sum_weights * 100
-                #set edge weights
-                edge['w_ij'] = w_ij
-                edge['w_ji'] = w_ji
-                G.add_edge(edge['source_id'], edge['dest_id'], weight = w_ij)
-                G.add_edge(edge['dest_id'], edge['source_id'], weight = w_ji)
-
-        elif self.ignore_ties and ties_as_half:
-            for _, edge in self.edge_weights.iterrows():
-                prefer_1 = edge['prefer_1'] + 0.5 * edge['prefer_none']
-                prefer_2 = edge['prefer_2'] + 0.5 * edge['prefer_none']
-                G.add_edge(edge['source_id'], edge['dest_id'], weight = prefer_1)
-                G.add_edge(edge['dest_id'], edge['source_id'], weight = prefer_2)
-        elif ties_as_half:
-            print("Ties as half")
-            for _, edge in self.edge_weights.iterrows():
-                prefer_1 = edge['prefer_1'] + 0.5 * edge['prefer_none'] + edge['prefer_missing']
-                prefer_2 = edge['prefer_2'] + 0.5 * edge['prefer_none'] + edge['prefer_missing']
-                G.add_edge(edge['source_id'], edge['dest_id'], weight = prefer_1)
-                G.add_edge(edge['dest_id'], edge['source_id'], weight = prefer_2)
-        elif self.ignore_ties:
-            print("Ignoring ties")
-            for _, edge in self.edge_weights.iterrows():
-                G.add_edge(edge['source_id'], edge['dest_id'], weight = edge['prefer_1'])
-                G.add_edge(edge['dest_id'], edge['source_id'], weight = edge['prefer_2'])
-        else:
-            print("Normal Weighting")
-            for _, edge in self.edge_weights.iterrows():
-                G.add_edge(edge['source_id'], edge['dest_id'], weight = edge['w_ij'])
-                G.add_edge(edge['dest_id'], edge['source_id'], weight = edge['w_ji'])
+        for _, edge in self.edge_weights.iterrows():
+            G.add_edge(edge['source_id'], edge['dest_id'], weight = edge['w_ij'])
+            G.add_edge(edge['dest_id'], edge['source_id'], weight = edge['w_ji'])
         self.G = G
 
-        # setup dissent values
-        if self.adjust_weights:
-            dissent_values = np.unique(np.concatenate((self.edge_weights['v_ij'].values, self.edge_weights['v_ji'].values)))
-        else:
-            dissent_values = np.unique(np.concatenate((self.edge_weights['w_ij'].values, self.edge_weights['w_ji'].values)))
+        dissent_values = np.unique(np.concatenate((self.edge_weights['w_ij'].values, self.edge_weights['w_ji'].values)))
 
 
         dissent_max = self.n_judges / 2.0
@@ -156,9 +87,6 @@ class SelectiveRankAggregator:
         df['adjustment'] = self.n_judges / (self.n_judges - df['prefer_missing'])
         df['v_ij'] = (df['w_ij'] * self.n_judges) / (self.n_judges - df['prefer_missing'])
         df['v_ji'] = (df['w_ji'] * self.n_judges) / (self.n_judges - df['prefer_missing'])
-        if self.ignore_missing is False:
-            df['w_ij'] += df['prefer_missing']
-            df['w_ji'] += df['prefer_missing']
 
         n = len(self.items)
         assert all(df[['prefer_1', 'prefer_2', 'prefer_missing', 'prefer_none']].sum(axis = 1) == self.n_judges)
@@ -351,23 +279,11 @@ class RankingPath:
         if len(self) < 2:
             return True, 0, []
 
-    def __repr__(self):
-        return f"RankingPath({self.dissent_rates})"
-
-    def __check_rep__(self):
-        """
-        Checks if the preferences are consistent across all dissent values.
-        :return: Tuple (True if preferences are consistent, False otherwise, Number of failures, List of failure pairs).
-        """
-        if len(self) < 2:
-            return True, 0, []
-
         for a in self.dissent_rates:
             R = self[a]
             larger_rates = [r for r in self.dissent_rates if r > a]
             for b in larger_rates:
                 S = self[b]
-                #todo: make this work with the new setup
 
                 # if not R.is_compatible_with(S):
                 #     raise ValueError(f"Rankings for dissent values {a} and {b} are not comparable")
@@ -379,6 +295,4 @@ class RankingPath:
 def check_dissent_rate(rate):
     assert np.isfinite(rate), "dissent must be finite"
     assert np.greater_equal(rate, 0.0), "dissent must be a float between 0 and 1"
-    # removed check for experitmation
-    # assert np.less(rate, 0.5), "dissent must be less than 0.5"
     return True
