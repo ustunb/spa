@@ -79,7 +79,7 @@ if settings["dissent"] is None:
         'total_runtime': sum(ranking_time),
         })
 else:
-    ranking, ranking_time = fitter.fit(items =data.items, ignore_missing = settings["ignore_missing"], dissent_rate = settings["dissent"])
+    ranking, ranking_time = fitter.fit(items =data.items, dissent_rate = settings["dissent"])
 
 results_file = get_results_file(**settings)
 with open(results_file, 'wb') as f:

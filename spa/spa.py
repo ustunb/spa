@@ -177,7 +177,6 @@ class SelectiveRankAggregator:
 
             runtimes.append(time.time() - start_time)
 
-        print(outputs)
         out = RankingPath(outputs)
         return out, runtimes
 
