@@ -120,7 +120,7 @@ def get_sampling_results_file(data_name, method_name, sampling_type = 'sampling'
     header = f"{data_name}_{method_name}"
     # append dissent if we ran SRA for a specific dissent rate
     dissent = kwargs.get('dissent_rate', float('nan'))
-    if method_name == 'sra' and np.isfinite(dissent):
+    if method_name == 'spa' and np.isfinite(dissent):
         header = f"{header}_dissent_{int(dissent * 100):03d}"
 
     out = f"{header}_{sampling_type}_{sample_id:03d}.results"
