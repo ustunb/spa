@@ -63,7 +63,7 @@ if settings["dissent"] is None:
 
     fitter = Aggregator(
         data,
-        exceed_max_dissent=True
+        exceed_max_dissent=False #needs verification for behavior and guarantees 
     )
 
     edge_weights = fitter.edge_weights
