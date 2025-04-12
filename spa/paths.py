@@ -85,7 +85,7 @@ def get_results_file(data_name, method_name, **kwargs):
     #assert isinstance(method_name, str) and len(method_name) > 0
     # assert isinstance(method_name, str) and len(method_name) > 0
 
-    if method_name == 'sra':
+    if method_name == 'spa':
         dissent = kwargs.get('dissent_rate', float('nan'))
         if np.isfinite(dissent):
             dissent_str = f"{int(dissent * 100):03d}"
@@ -103,7 +103,7 @@ def get_all_sampling_results_files(data_name, method_name, sampling_type = 'samp
     assert isinstance(sampling_type, str) and len(sampling_type) > 0
 
     out = f"{data_name}_{method_name}_{sampling_type}.results"
-    # append dissent if we ran SRA for a specific dissent rate
+    # append dissent if we ran SPA for a specific dissent rate
     out = results_dir / out
     return out
 
@@ -118,7 +118,7 @@ def get_sampling_results_file(data_name, method_name, sampling_type = 'sampling'
     assert isinstance(sample_id, int) and sample_id >= 0
 
     header = f"{data_name}_{method_name}"
-    # append dissent if we ran SRA for a specific dissent rate
+    # append dissent if we ran SPA for a specific dissent rate
     dissent = kwargs.get('dissent_rate', float('nan'))
     if method_name == 'spa' and np.isfinite(dissent):
         header = f"{header}_dissent_{int(dissent * 100):03d}"
