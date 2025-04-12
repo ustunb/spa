@@ -68,7 +68,7 @@ if settings["dissent"] is None:
 
     edge_weights = fitter.edge_weights
 
-    ranking_path, ranking_time = fitter.fit_path(prefs = data.prefs, upper_bound=0.5)
+    ranking_path, ranking_time = fitter.fit_path(prefs = data.prefs)
 
 
     results.update({
