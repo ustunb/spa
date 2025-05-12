@@ -18,7 +18,7 @@ from argparse import ArgumentParser
 
 # Settings dictionary for default configurations
 settings = {
-    "data_name": "synthetic100",
+    "data_name": "llm_inf_1k",
     "seed": 2338,
     "load_data": False,
     "create_report": False,

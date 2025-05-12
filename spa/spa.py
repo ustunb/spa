@@ -82,8 +82,8 @@ class SelectiveRankAggregator:
         df['prefer_missing'] = self.n_judges - df['prefer_1'] - df['prefer_2'] - df['prefer_none']
 
         # Add edge weight columns
-        df['w_ij'] = df['prefer_1'] + df['prefer_none']
-        df['w_ji'] = df['prefer_2'] + df['prefer_none']
+        df['w_ij'] = df['prefer_1'] + df['prefer_none'] + df['prefer_missing']
+        df['w_ji'] = df['prefer_2'] + df['prefer_none'] + df['prefer_missing']
         df['adjustment'] = self.n_judges / (self.n_judges - df['prefer_missing'])
         df['v_ij'] = (df['w_ij'] * self.n_judges) / (self.n_judges - df['prefer_missing'])
         df['v_ji'] = (df['w_ji'] * self.n_judges) / (self.n_judges - df['prefer_missing'])
