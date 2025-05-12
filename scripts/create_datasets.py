@@ -34,7 +34,7 @@ from spa.data import PreferenceDataset
 
 # script settings / default command line arguments
 settings = {
-    "data_names": ["synthetic100"],
+    "data_names": ["llm_inf_1k"],
     "seed": 2338,
 }
 
