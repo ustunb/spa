@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "selective-preference-aggregation"
+name = "selectiverankings"
 version = "0.0.1"
 description = "A short description of your project."
 readme = "README.md"
