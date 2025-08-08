@@ -25,5 +25,4 @@ classifiers = [
 "Homepage" = "https://github.com/ustunb/spa"
 "Bug Tracker" = "https://github.com/ustunb/spa/issues"
 
-[tool.setuptools]
 packages = ["spa"]
