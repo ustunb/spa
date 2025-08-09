@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "selective-rank"
+name = "selectiverank"
 version = "0.0.1"
-description = "A short description of your project."
+description = "Implements Selective Preference Aggregation (SPA), a rank aggregation framework that constructs collective rankings while limiting the fraction of individual preferences that can be overruled."
 readme = "README.md"
 requires-python = ">=3.7"
 authors = [
