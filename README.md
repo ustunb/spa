@@ -9,6 +9,14 @@ Selective Preference Aggregation
 ├── reports      # reports                           `reports_dir`          			
 ```
 
+## Installation
+
+You can install the package using pip:
+
+```bash
+pip install selectiverank
+```
+
 ### 1. Add Your Dataset
 
 1.  **Location:** Create a subfolder for your dataset within the `data/` directory (e.g., `data/movie/`).
