@@ -17,6 +17,34 @@ You can install the package using pip:
 pip install selectiverank
 ```
 
+## Run without cloning (via `python -m`)
+
+After `pip install selectiverank`, invoke the installed modules directly.
+
+### Quick commands
+    python -m spa.scripts.create_datasets
+    python -m spa.scripts.dev_spa
+    python -m spa.scripts.aggregate_base_results
+    python -m spa.scripts.combine_all_results
+
+### Examples 
+- **Create datasets**
+  
+      python -m spa.scripts.create_datasets --dataset movie --data-dir ./data
+
+- **Run SPA experiments**
+  
+      python -m spa.scripts.dev_spa --dataset movie --data-dir ./data --results-dir ./results --seed 2338
+
+- **Aggregate base results**
+  
+      python -m spa.scripts.aggregate_base_results --results-dir ./results
+
+- **Combine all results**
+  
+      python -m spa.scripts.combine_all_results --results-dir ./results
+
+
 ### 1. Add Your Dataset
 
 1.  **Location:** Create a subfolder for your dataset within the `data/` directory (e.g., `data/movie/`).
