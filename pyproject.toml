@@ -24,5 +24,9 @@ classifiers = [
 Homepage = "https://github.com/ustunb/spa"
 "Bug Tracker" = "https://github.com/ustunb/spa/issues"
 
-[tool.setuptools.packages.find]
-include = ["spa", "spa.*", "scripts", "scripts.*"]
+[tool.setuptools]
+packages = ["spa", "spa.scripts"]
+
+[tool.setuptools.package-dir]
+spa = "spa"
+"spa.scripts" = "scripts"
