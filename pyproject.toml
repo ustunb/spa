@@ -25,4 +25,4 @@ Homepage = "https://github.com/ustunb/spa"
 "Bug Tracker" = "https://github.com/ustunb/spa/issues"
 
 [tool.setuptools.packages.find]
-include = ["spa", "spa.*"]
+include = ["spa", "spa.*", "scripts", "scripts.*"]
