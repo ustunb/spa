@@ -230,17 +230,13 @@ class RankingPath:
         :param dissent_rate: The dissent value to retrieve the ranking for.
         :return: The Ranking object.
         """
-        assert check_dissent_rate(dissent_rate)
         if dissent_rate in self.dissent_rates:
             return self.rankings[dissent_rate]
-        else:
-            idx = np.searchsorted(self.dissent_rates, dissent_rate, side='right')
-            if idx == len(self):
-                val = self.dissent_rates[idx - 1]
-            else:
-                val = self.dissent_rates[idx]
-            out = self.rankings.get(val)
-            return out
+        idx = np.searchsorted(self.dissent_rates, dissent_rate, side='right') - 1
+        if idx < 0:
+            idx = 0
+        val = self.dissent_rates[idx]
+        return self.rankings[val]
 
     def __setitem__(self, dissent_rate, ranking):
         """
